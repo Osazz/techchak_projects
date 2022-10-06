@@ -53,6 +53,10 @@ You are a Cloud engineer working for an I.T firm and your Boss wants you to depl
     - ansible-playbook -i server_hosts install_server.yml  --user ec2-user --key-file ~/Downloads/deploy-web-app.pem
 - on your browser type `http://<public-dns-of-your-server>`
 
+## Improvement to solution
+- create key pair with terraform
+- wrapper solution into a python script so it can be fully one-click
+
 
 ### Notes (Debugging process)
 - Create Security group on AWS to allow ssh and http 
