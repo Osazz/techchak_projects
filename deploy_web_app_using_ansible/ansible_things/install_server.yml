@@ -1,0 +1,45 @@
+---
+- name: "Download static website"
+  hosts: localhost
+  connection: local
+  tasks:
+
+    - name: "Clone static-web-project from git hub"
+      shell: "git clone https://github.com/Osazz/website.git"
+
+- name: "Download static website"
+  hosts: server
+  tasks:
+    - name: Install apache packages
+      yum:
+        name: httpd
+        state: present
+      become: yes
+
+    - name: ensure httpd is running
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      become: yes
+
+    - name: Install apache packages
+      yum:
+        name: git
+        state: present
+      become: yes
+
+    - name: Copy website content
+      synchronize:
+        src: "website/"
+        dest: /var/www/html
+      become: yes
+
+- name: "Delete website downloaded"
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Delete content & directory
+      file:
+        state: absent
+        path: "website/"
