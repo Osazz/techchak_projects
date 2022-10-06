@@ -81,7 +81,7 @@ Fix problem
   - put website in that folder
 
 #### Automating with Ansible playbook
-- create an hosts file and add your instance dns to it
+- create a hosts file and add your instance dns to it
 - create you ansible role and automate the server installation process
 
 n.b : to run ansible use -
