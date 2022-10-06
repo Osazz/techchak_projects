@@ -58,7 +58,7 @@ You are a Cloud engineer working for an I.T firm and your Boss wants you to depl
 - wrapper solution into a python script so it can be fully one-click
 
 
-### Notes (Debugging process)
+## Notes (Debugging process)
 - Create Security group on AWS to allow ssh and http 
 - create 1 instance to see what is needed to deploy apache server
 Fix problem
